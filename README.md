@@ -56,3 +56,18 @@ webmin login form
 Setelah masuk, Anda akan diarahkan ke dasbor Webmin, yang menyediakan informasi dasar tentang sistem Anda.
 
 Dari sini, Anda dapat mulai mengonfigurasi dan mengelola server Debian sesuai kebutuhan Anda.
+
+tambahan :
+
+On Debian possible default full paths are:
+/sbin/sysctl - from package: procps
+You may install the required package with command apt-get install procps 
+
+Become a root user via the su command or sudo command (when prompted type your password before setting up a new root account password):
+sudo -i
+
+OR use the su command if you know existing root account password:
+su -
+
+Finally change your root user password:
+passwd
