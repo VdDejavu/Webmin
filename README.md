@@ -12,9 +12,7 @@ Menginstal Webmin di Debian Linux adalah proses yang relatif mudah dan hanya aka
 
     Import Webmin GPG key menggunakan perintah wget dan aktifkan Webmin repository:
 
-    wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
-
-    sudo add-apt-repository "deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib"
+    wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add - wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add - sudo add-apt-repository "deb http://download.webmin.com/download/repository sarge contrib"
 
     Setelah repositori diaktifkan, instal paket Webmin dengan menjalankan:
 
