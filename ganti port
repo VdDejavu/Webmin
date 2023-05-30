@@ -1,0 +1,81 @@
+Option 1 Using Terminal
+
+Google cloud, azure, and amazon block access to port 10000 by default, as all have a firewall activated. This may prevent you from logging into http://localhost:10000/ from another system on your network or over the Internet.
+
+Edit the miniserv.conf:
+/etc/webmin/miniserv.conf
+
+/etc/webmin/miniserv.conf
+
+and change the default port number (10000) to any port you like, for example 81, or 443.
+
+sudo nano -w /etc/webmin/miniserv.conf
+
+Find the following line 1 and change:
+port=10000
+addtype_cgi=internal/cgi
+realm=Webmin Server
+logfile=/var/webmin/miniserv.log
+errorlog=/var/webmin/miniserv.error
+pidfile=/var/webmin/miniserv.pid
+logtime=168
+ssl=1
+no_ssl2=1
+no_ssl3=1
+no_tls1=1
+no_tls1_1=1
+ssl_honorcipherorder=1
+
+	
+port=10000
+addtype_cgi=internal/cgi
+realm=Webmin Server
+logfile=/var/webmin/miniserv.log
+errorlog=/var/webmin/miniserv.error
+pidfile=/var/webmin/miniserv.pid
+logtime=168
+ssl=1
+no_ssl2=1
+no_ssl3=1
+no_tls1=1
+no_tls1_1=1
+ssl_honorcipherorder=1
+
+How to change port default port to an uncommon port. Port 10000 is heavily targeted by hackers to gain access to Virtualmin server. Of course they can’t get in without the correct password, but sometimes some of them gets through. So it’s best to prepare for the worst.
+
+We need to tell Webmin to stop using TLS/SSL, as Apache will provide that for us going forward.
+...
+ssl=1
+...
+
+...
+ssl=1
+...
+
+Change the 1 to a 0 This will tell Webmin to stop using SSL.
+
+Now, you need to restart Webmin.
+sudo systemctl restart webmin
+
+	
+sudo systemctl restart webmin
+
+Or
+sudo /etc/init.d/webmin restart
+
+	
+sudo /etc/init.d/webmin restart
+
+Following messages will appear after running that command.
+(base) rck@redhat:~$ sudo /etc/init.d/webmin restart
+Stopping Webmin server in /usr/share/webmin
+Starting Webmin server in /usr/share/webmin
+1
+2
+3
+	
+(base) rck@redhat:~$ sudo /etc/init.d/webmin restart
+Stopping Webmin server in /usr/share/webmin
+Starting Webmin server in /usr/share/webmin
+
+After a fresh restart the Webmin server should be running again.
