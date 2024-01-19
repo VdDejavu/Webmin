@@ -1,0 +1,21 @@
+Untuk menginstal Webmin di Debian 11, sobat dapat mengikuti langkah-langkah berikut:
+
+    Buka terminal Debian 11, akses sebagai root (Super User)
+    Pastikan sistem dapat diperbarui dengan menjalankan perintah berikut:
+    apt update
+    apt upgrade
+    Webmin membutuhkan dependensi Perl, jadi pastikan Perl sudah terinstal dengan menjalankan perintah berikut:
+    apt install perl
+    Unduh paket instalasi Webmin dari situs resmi Webmin dengan menggunakan wget:
+    wget http://www.webmin.com/download/deb/webmin-current.deb
+    Instal paket Webmin yang telah diunduh dengan perintah dpkg
+    dpkg -i webmin-current.deb
+    Jika ada dependensi yang hilang, Anda dapat memperbaikinya dengan menjalankan perintah berikut:
+    apt --fix-broken install
+    Setelah instalasi selesai, jalankan perintah berikut untuk memastikan Webmin berjalan:
+    systemctl start webmin
+    Buka browser dan akses Webmin melalui alamat berikut:
+    https://localhost:10000
+    Atau menggunakan IP yang digunakan oleh server
+    Ketika mengakses Webmin untuk pertama kalinya, sobat akan melihat peringatan keamanan tentang sertifikat SSL. Ini normal karena Webmin menggunakan sertifikat self-signed. Lanjutkan dan teruskan untuk mengakses antarmuka Webmin.
+    Masukkan username dan password root Debian untuk masuk ke Webmin.
