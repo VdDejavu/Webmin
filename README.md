@@ -71,6 +71,6 @@ Finally change your root user password:
 passwd
 
 
-wget -O menu-webmin.sh https://raw.githubusercontent.com/VdDejavu/Webmin//main/menu-webmin.sh && chmod +x menu-webmin.sh && ./menu-webmin.sh
+wget -O menu-webmin.sh https://raw.githubusercontent.com/VdDejavu/Webmin/main/menu-webmin.sh && chmod +x menu-webmin.sh && ./menu-webmin.sh
 
 
